@@ -8,6 +8,7 @@ import java.util.Objects;
 public class TicTacToePanel extends JPanel implements ActionListener {
     private TicTacToeGame controller;
     private GridLayout panelLayout;
+
     private JButton tile1;
     private JButton tile2;
     private JButton tile3;
@@ -59,94 +60,105 @@ public class TicTacToePanel extends JPanel implements ActionListener {
     }
 
     private void updateScreen(String tile) {
-        //if (!controller.getAIWin() && !controller.getPlayerWin()) {
-        if (tile.contains("1")) {
-            tile1.setText(controller.getPlayerSymbol());
-            tile1.setFont(new Font("Courier", Font.BOLD,28));
-            tile1.setEnabled(false);
-            controller.setPlayerOrAITaken(1, "player");
-        } else if (tile.contains("2")) {
-            tile2.setText(controller.getPlayerSymbol());
-            tile2.setFont(new Font("Courier", Font.BOLD,28));
-            tile2.setEnabled(false);
-            controller.setPlayerOrAITaken(2, "player");
-        } else if (tile.contains("3")) {
-            tile3.setText(controller.getPlayerSymbol());
-            tile3.setFont(new Font("Courier", Font.BOLD,28));
-            tile3.setEnabled(false);
-            controller.setPlayerOrAITaken(3, "player");
-        } else if (tile.contains("4")) {
-            tile4.setText(controller.getPlayerSymbol());
-            tile4.setFont(new Font("Courier", Font.BOLD,28));
-            tile4.setEnabled(false);
-            controller.setPlayerOrAITaken(4, "player");
-        } else if (tile.contains("5")) {
-            tile5.setText(controller.getPlayerSymbol());
-            tile5.setFont(new Font("Courier", Font.BOLD,28));
-            tile5.setEnabled(false);
-            controller.setPlayerOrAITaken(5, "player");
-        } else if (tile.contains("6")) {
-            tile6.setText(controller.getPlayerSymbol());
-            tile6.setFont(new Font("Courier", Font.BOLD,28));
-            tile6.setEnabled(false);
-            controller.setPlayerOrAITaken(6, "player");
-        } else if (tile.contains("7")) {
-            tile7.setText(controller.getPlayerSymbol());
-            tile7.setFont(new Font("Courier", Font.BOLD,28));
-            tile7.setEnabled(false);
-            controller.setPlayerOrAITaken(7, "player");
-        } else if (tile.contains("8")) {
-            tile8.setText(controller.getPlayerSymbol());
-            tile8.setFont(new Font("Courier", Font.BOLD,28));
-            tile8.setEnabled(false);
-            controller.setPlayerOrAITaken(8, "player");
-        } else if (tile.contains("9")) {
-            tile9.setText(controller.getPlayerSymbol());
-            tile9.setFont(new Font("Courier", Font.BOLD,28));
-            tile9.setEnabled(false);
-            controller.setPlayerOrAITaken(9, "player");
+        String pSymbol = controller.getPlayerSymbol();
+        String aiSymbol = controller.getAISymbol();
+        if (!controller.getAIWin() && !controller.getPlayerWin()) {
+            if (tile.contains("1")) {
+                tile1.setText(pSymbol);
+                tile1.setFont(new Font("Courier", Font.BOLD,100));
+                tile1.setEnabled(false);
+                controller.setPlayerOrAITaken(1, "player");
+            } else if (tile.contains("2")) {
+                tile2.setText(pSymbol);
+                tile2.setFont(new Font("Courier", Font.BOLD,100));
+                tile2.setEnabled(false);
+                controller.setPlayerOrAITaken(2, "player");
+            } else if (tile.contains("3")) {
+                tile3.setText(pSymbol);
+                tile3.setFont(new Font("Courier", Font.BOLD,100));
+                tile3.setEnabled(false);
+                controller.setPlayerOrAITaken(3, "player");
+            } else if (tile.contains("4")) {
+                tile4.setText(pSymbol);
+                tile4.setFont(new Font("Courier", Font.BOLD,100));
+                tile4.setEnabled(false);
+                controller.setPlayerOrAITaken(4, "player");
+            } else if (tile.contains("5")) {
+                tile5.setText(pSymbol);
+                tile5.setFont(new Font("Courier", Font.BOLD,100));
+                tile5.setEnabled(false);
+                controller.setPlayerOrAITaken(5, "player");
+            } else if (tile.contains("6")) {
+                tile6.setText(pSymbol);
+                tile6.setFont(new Font("Courier", Font.BOLD,100));
+                tile6.setEnabled(false);
+                controller.setPlayerOrAITaken(6, "player");
+            } else if (tile.contains("7")) {
+                tile7.setText(pSymbol);
+                tile7.setFont(new Font("Courier", Font.BOLD,100));
+                tile7.setEnabled(false);
+                controller.setPlayerOrAITaken(7, "player");
+            } else if (tile.contains("8")) {
+                tile8.setText(pSymbol);
+                tile8.setFont(new Font("Courier", Font.BOLD,100));
+                tile8.setEnabled(false);
+                controller.setPlayerOrAITaken(8, "player");
+            } else if (tile.contains("9")) {
+                tile9.setText(pSymbol);
+                tile9.setFont(new Font("Courier", Font.BOLD,100));
+                tile9.setEnabled(false);
+                controller.setPlayerOrAITaken(9, "player");
+            }
+            System.out.println("tile updated");
+
+            int aiMove = controller.aiMove();
+            if (aiMove == 1) {
+                tile1.setText(aiSymbol);
+                tile1.setFont(new Font("Courier", Font.BOLD,70));
+                tile1.setEnabled(false);
+                controller.setPlayerOrAITaken(1, "ai");
+            } else if (aiMove == 2) {
+                tile2.setText(aiSymbol);
+                tile2.setFont(new Font("Courier", Font.BOLD,28));
+                tile2.setEnabled(false);
+                controller.setPlayerOrAITaken(2, "ai");
+            } else if (aiMove == 3) {
+                tile3.setText(aiSymbol);
+                tile3.setFont(new Font("Courier", Font.BOLD,28));
+                tile3.setEnabled(false);
+                controller.setPlayerOrAITaken(3, "ai");
+            } else if (aiMove == 4) {
+                tile4.setText(aiSymbol);
+                tile4.setFont(new Font("Courier", Font.BOLD,28));
+                tile4.setEnabled(false);
+                controller.setPlayerOrAITaken(4, "ai");
+            } else if (aiMove == 5) {
+                tile5.setText(aiSymbol);
+                tile5.setFont(new Font("Courier", Font.BOLD,28));
+                tile5.setEnabled(false);
+                controller.setPlayerOrAITaken(5, "ai");
+            } else if (aiMove == 6) {
+                tile6.setText(aiSymbol);
+                tile6.setFont(new Font("Courier", Font.BOLD,28));
+                tile6.setEnabled(false);
+                controller.setPlayerOrAITaken(6, "ai");
+            } else if (aiMove == 7) {
+                tile7.setText(aiSymbol);
+                tile7.setFont(new Font("Courier", Font.BOLD,28));
+                tile7.setEnabled(false);
+                controller.setPlayerOrAITaken(7, "ai");
+            } else if (aiMove == 8) {
+                tile8.setText(aiSymbol);
+                tile8.setFont(new Font("Courier", Font.BOLD,28));
+                tile8.setEnabled(false);
+                controller.setPlayerOrAITaken(8, "ai");
+            } else if (aiMove == 9) {
+                tile9.setText(aiSymbol);
+                tile9.setFont(new Font("Courier", Font.BOLD,28));
+                tile9.setEnabled(false);
+                controller.setPlayerOrAITaken(9, "ai");
+            }
         }
-        System.out.println("tile updated");
-        int aiMove = controller.aiMove();
-        if (aiMove == 1) {
-            tile1.setText(controller.getAISymbol());
-            tile1.setFont(new Font("Courier", Font.BOLD,70));
-            tile1.setEnabled(false);
-            controller.setPlayerOrAITaken(1, "ai");
-        } else if (aiMove == 2) {
-            tile1.setText(controller.getAISymbol());
-            tile2.setEnabled(false);
-            controller.setPlayerOrAITaken(2, "ai");
-        } else if (aiMove == 3) {
-            tile1.setText(controller.getAISymbol());
-            tile3.setEnabled(false);
-            controller.setPlayerOrAITaken(3, "ai");
-        } else if (aiMove == 4) {
-            tile1.setText(controller.getAISymbol());
-            tile4.setEnabled(false);
-            controller.setPlayerOrAITaken(4, "ai");
-        } else if (aiMove == 5) {
-            tile1.setText(controller.getAISymbol());
-            tile5.setEnabled(false);
-            controller.setPlayerOrAITaken(5, "ai");
-        } else if (aiMove == 6) {
-            tile1.setText(controller.getAISymbol());
-            tile6.setEnabled(false);
-            controller.setPlayerOrAITaken(6, "ai");
-        } else if (aiMove == 7) {
-            tile1.setText(controller.getAISymbol());
-            tile7.setEnabled(false);
-            controller.setPlayerOrAITaken(7, "ai");
-        } else if (aiMove == 8) {
-            tile1.setText(controller.getAISymbol());
-            tile8.setEnabled(false);
-            controller.setPlayerOrAITaken(8, "ai");
-        } else if (aiMove == 9) {
-            tile1.setText(controller.getAISymbol());
-            tile9.setEnabled(false);
-            controller.setPlayerOrAITaken(9, "ai");
-        }
-        //}
         System.out.println("ai moved");
 
     }

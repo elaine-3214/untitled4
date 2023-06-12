@@ -56,74 +56,73 @@ public class TicTacToeGame {
         int pathToBlock = 0;
         //check win first
         int check = checkWin();
-        if (check != 0) {
+        if (check != 0) {       //paths 1-8
             //make final move here
             if (check == 1) {
                 if (!t1.getTaken().equals("ai")) {
-                    next = t1;
+                    return 1;
                 } else if (!t2.getTaken().equals("ai")) {
-                    next = t2;
+                    return 2;
                 } else {
-                    next = t3;
+                    return 3;
                 }
             } else if (check == 2) {
                 if (!t4.getTaken().equals("ai")) {
-                    next = t4;
+                    return 4;
                 } else if (!t5.getTaken().equals("ai")) {
-                    next = t5;
+                    return 5;
                 } else {
-                    next = t6;
+                    return 6;
                 }
             } else if (check == 3) {
                 if (!t7.getTaken().equals("ai")) {
-                    next = t7;
+                    return 7;
                 } else if (!t8.getTaken().equals("ai")) {
-                    next = t8;
+                    return 8;
                 } else {
-                    next = t9;
+                    return 9;
                 }
             } else if (check == 4) {
                 if (!t1.getTaken().equals("ai")) {
-                    next = t1;
+                    return 1;
                 } else if (!t4.getTaken().equals("ai")) {
-                    next = t4;
+                    return 4;
                 } else {
-                    next = t7;
+                    return 7;
                 }
             } else if (check == 5) {
                 if (!t2.getTaken().equals("ai")) {
-                    next = t2;
+                    return 2;
                 } else if (!t5.getTaken().equals("ai")) {
-                    next = t5;
+                    return 5;
                 } else {
-                    next = t8;
+                    return 8;
                 }
             } else if (check == 6) {
                 if (!t3.getTaken().equals("ai")) {
-                    next = t3;
+                    return 3;
                 } else if (!t6.getTaken().equals("ai")) {
-                    next = t6;
+                    return 6;
                 } else {
-                    next = t9;
+                    return 9;
                 }
             } else if (check == 7) {
                 if (!t1.getTaken().equals("ai")) {
-                    next = t1;
+                    return 1;
                 } else if (!t5.getTaken().equals("ai")) {
-                    next = t5;
+                    return 5;
                 } else {
-                    next = t9;
+                    return 9;
                 }
             } else {
                 if (!t3.getTaken().equals("ai")) {
-                    next = t3;
+                    return 3;
                 } else if (!t5.getTaken().equals("ai")) {
-                    next = t5;
+                    return 5;
                 } else {
-                    next = t7;
+                    return 7;
                 }
             }
-            ai.setWin(true);
         } else {
             //get every tile with player
             ArrayList<Tile> playerPlace = new ArrayList<Tile>();
@@ -159,7 +158,6 @@ public class TicTacToeGame {
             //check for danger
             for (Tile temp : playerPlace) {
                 int num = 0;
-                pathToBlock = 0;
                 num = checkHorizontal(temp);
                 if (num == 0) {
                     num = checkVertical(temp);
@@ -168,23 +166,23 @@ public class TicTacToeGame {
                         if (num == 0) {             //nothing to block
                             int rand = (int) (Math.random() * 9) + 1;
                             if (t1.getPlace() == rand && t1.getTaken().equals("no")) {
-                                next = t1;
+                                return 1;
                             } else if (t2.getPlace() == rand && t2.getTaken().equals("no")) {
-                                next = t2;
+                                return 2;
                             } else if (t3.getPlace() == rand && t3.getTaken().equals("no")) {
-                                next = t3;
+                                return 3;
                             } else if (t4.getPlace() == rand && t4.getTaken().equals("no")) {
-                                next = t4;
+                                return 4;
                             } else if (t5.getPlace() == rand && t5.getTaken().equals("no")) {
-                                next = t5;
+                                return 5;
                             } else if (t6.getPlace() == rand && t5.getTaken().equals("no")) {
-                                next = t6;
+                                return 6;
                             } else if (t7.getPlace() == rand && t5.getTaken().equals("no")) {
-                                next = t7;
+                                return 7;
                             } else if (t8.getPlace() == rand && t5.getTaken().equals("no")) {
-                                next = t8;
+                                return 8;
                             } else if (t9.getPlace() == rand && t5.getTaken().equals("no")) {
-                                next = t9;
+                                return 9;
                             }
                         } else {
                             pathToBlock = num;
@@ -199,79 +197,79 @@ public class TicTacToeGame {
             if (pathToBlock != 0) {
                 if (pathToBlock == 1) {
                     if (!t1.getTaken().equals("ai")) {
-                        next = t1;
+                        return 1;
                     } else if (!t2.getTaken().equals("ai")) {
-                        next = t2;
+                        return 2;
                     } else  {
-                        next = t3;
+                        return 3;
                     }
                 }
                 if (pathToBlock == 2) {
                     if (!t4.getTaken().equals("ai")) {
-                        next = t4;
+                        return 4;
                     } else if (!t5.getTaken().equals("ai")) {
-                        next = t5;
+                        return 5;
                     } else  {
-                        next = t6;
+                        return 6;
                     }
                 }
                 if (pathToBlock == 3) {
                     if (!t7.getTaken().equals("ai")) {
-                        next = t7;
+                        return 7;
                     } else if (!t8.getTaken().equals("ai")) {
-                        next = t8;
+                        return 8;
                     } else  {
-                        next = t9;
+                        return 9;
                     }
                 }
                 if (pathToBlock == 4) {
                     if (!t1.getTaken().equals("ai")) {
-                        next = t1;
+                        return 1;
                     } else if (!t4.getTaken().equals("ai")) {
-                        next = t4;
+                        return 4;
                     } else  {
-                        next = t7;
+                        return 7;
                     }
                 }
                 if (pathToBlock == 5) {
                     if (!t2.getTaken().equals("ai")) {
-                        next = t2;
+                        return 2;
                     } else if (!t5.getTaken().equals("ai")) {
-                        next = t5;
+                        return 5;
                     } else  {
-                        next = t8;
+                        return 8;
                     }
                 }
                 if (pathToBlock == 6) {
                     if (!t3.getTaken().equals("ai")) {
-                        next = t3;
+                        return 3;
                     } else if (!t6.getTaken().equals("ai")) {
-                        next = t6;
+                        return 6;
                     } else  {
-                        next = t9;
+                        return 9;
                     }
                 }
                 if (pathToBlock == 7) {
                     if (!t1.getTaken().equals("ai")) {
-                        next = t1;
+                        return 1;
                     } else if (!t5.getTaken().equals("ai")) {
-                        next = t5;
+                        return 5;
                     } else  {
-                        next = t9;
+                        return 9;
                     }
                 }
                 if (pathToBlock == 8) {
                     if (!t3.getTaken().equals("ai")) {
-                        next = t3;
+                        return 3;
                     } else if (!t5.getTaken().equals("ai")) {
-                        next = t5;
+                        return 5;
                     } else  {
-                        next = t7;
+                        return 7;
                     }
                 }
             }
         }
-        return next.getPlace();
+        return 0;
     }
 
     private int checkWin() {

@@ -18,7 +18,7 @@ public class Tile {
     }
 
     public void setTaken(String t) {
-        taken = t;
+        taken = t; //no/player/ai
     }
 
     public String getTaken() {

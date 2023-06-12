@@ -17,6 +17,7 @@ public class ActualTicTacToeFrame extends JFrame implements ActionListener {
         this.game = game;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
         homepage = new Homepage(game);
         gamePanel = new TicTacToePanel(game);
 

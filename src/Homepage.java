@@ -20,7 +20,7 @@ public class Homepage extends JPanel implements ActionListener {
         super();
         controller = controllerRef;
         panelLayout = new SpringLayout();
-        welcome = new JLabel("Welcome to Tic Tac Toe! Choose X / O to start:");
+        welcome = new JLabel("Welcome to Tic Tac Autoe! Choose X / O to start:");
         welcome.setFont(new Font("Courier", Font.BOLD,28));
         oButton = new JButton("O");
         xButton = new JButton("X");
