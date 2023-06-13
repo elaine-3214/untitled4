@@ -288,7 +288,16 @@ public class TicTacToeGame {
                 if (t3.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t1.getTaken().equals(player) && !t2.getTaken().equals(player) && !t3.getTaken().equals(player)) {
+                if (t1.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t2.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t3.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 }
             }
@@ -302,7 +311,16 @@ public class TicTacToeGame {
                 if (t6.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t4.getTaken().equals(player) && !t5.getTaken().equals(player) && !t6.getTaken().equals(player)) {
+                if (t4.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t5.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t6.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 }
             }
@@ -316,7 +334,16 @@ public class TicTacToeGame {
                 if (t9.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t7.getTaken().equals(player) && !t8.getTaken().equals(player) && !t9.getTaken().equals(player)) {
+                if (t7.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t8.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t9.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 }
             }
@@ -330,7 +357,16 @@ public class TicTacToeGame {
                 if (t7.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t1.getTaken().equals(player) && !t4.getTaken().equals(player) && !t7.getTaken().equals(player)) {
+                if (t1.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t4.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t7.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 }
             }
@@ -344,7 +380,16 @@ public class TicTacToeGame {
                 if (t8.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t2.getTaken().equals(player) && !t5.getTaken().equals(player) && !t8.getTaken().equals(player)) {
+                if (t2.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t5.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t8.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 }
             }
@@ -358,7 +403,16 @@ public class TicTacToeGame {
                 if (t9.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t3.getTaken().equals(player) && !t6.getTaken().equals(player) && !t9.getTaken().equals(player)) {
+                if (t3.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t6.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t9.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 }
             }
@@ -372,7 +426,16 @@ public class TicTacToeGame {
                 if (t9.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t1.getTaken().equals(player) && !t5.getTaken().equals(player) && !t9.getTaken().equals(player)) {
+                if (t1.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t5.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t9.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 }
             }
@@ -386,7 +449,16 @@ public class TicTacToeGame {
                 if (t7.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1 && !t3.getTaken().equals(player) && !t5.getTaken().equals(player) && !t7.getTaken().equals(player)) {
+                if (t3.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t5.getTaken().equals("player")) {
+                    count--;
+                }
+                if (t7.getTaken().equals("player")) {
+                    count--;
+                }
+                if (count > 1) {
                     return i;
                 } else {
                     count = 0;
