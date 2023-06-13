@@ -46,10 +46,6 @@ public class TicTacToeGame {
         return gameWindow.getPlayerSymbol();
     }
 
-    public String getAISymbol() {
-        return getPlayerSymbol().equals("X") ? "O" : "X";
-    }
-
     public int aiMove() {
         //next move
         Tile next = null;
@@ -60,9 +56,9 @@ public class TicTacToeGame {
             //make final move here
             System.out.println("check != 0");
             if (check == 1) {
-                if (!t1.getTaken().equals("ai")) {
+                if (t1.getTaken().equals("ai")) {
                     return 1;
-                } else if (!t2.getTaken().equals("ai")) {
+                } else if (t2.getTaken().equals("ai")) {
                     return 2;
                 } else {
                     return 3;
@@ -292,7 +288,7 @@ public class TicTacToeGame {
                 if (t3.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t1.getTaken().equals(player) && !t2.getTaken().equals(player) && !t3.getTaken().equals(player)) {
                     return i;
                 }
             }
@@ -306,7 +302,7 @@ public class TicTacToeGame {
                 if (t6.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t4.getTaken().equals(player) && !t5.getTaken().equals(player) && !t6.getTaken().equals(player)) {
                     return i;
                 }
             }
@@ -320,7 +316,7 @@ public class TicTacToeGame {
                 if (t9.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t7.getTaken().equals(player) && !t8.getTaken().equals(player) && !t9.getTaken().equals(player)) {
                     return i;
                 }
             }
@@ -334,7 +330,7 @@ public class TicTacToeGame {
                 if (t7.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t1.getTaken().equals(player) && !t4.getTaken().equals(player) && !t7.getTaken().equals(player)) {
                     return i;
                 }
             }
@@ -348,7 +344,7 @@ public class TicTacToeGame {
                 if (t8.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t2.getTaken().equals(player) && !t5.getTaken().equals(player) && !t8.getTaken().equals(player)) {
                     return i;
                 }
             }
@@ -362,7 +358,7 @@ public class TicTacToeGame {
                 if (t9.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t3.getTaken().equals(player) && !t6.getTaken().equals(player) && !t9.getTaken().equals(player)) {
                     return i;
                 }
             }
@@ -376,7 +372,7 @@ public class TicTacToeGame {
                 if (t9.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t1.getTaken().equals(player) && !t5.getTaken().equals(player) && !t9.getTaken().equals(player)) {
                     return i;
                 }
             }
@@ -390,7 +386,7 @@ public class TicTacToeGame {
                 if (t7.getTaken().equals("ai")) {
                     count++;
                 }
-                if (count > 1) {
+                if (count > 1 && !t3.getTaken().equals(player) && !t5.getTaken().equals(player) && !t7.getTaken().equals(player)) {
                     return i;
                 } else {
                     count = 0;
@@ -412,8 +408,10 @@ public class TicTacToeGame {
             t4.setTaken(who);
         else if (t == 5)
             t5.setTaken(who);
-        else if (t == 6)
+        else if (t == 6) {
             t6.setTaken(who);
+            System.out.println("6 is taken by " + who);
+        }
         else if (t == 7)
             t7.setTaken(who);
         else if (t == 8)

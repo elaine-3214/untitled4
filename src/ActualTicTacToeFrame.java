@@ -17,7 +17,6 @@ public class ActualTicTacToeFrame extends JFrame implements ActionListener {
         this.game = game;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
         homepage = new Homepage(game);
         gamePanel = new TicTacToePanel(game);
 
@@ -34,6 +33,8 @@ public class ActualTicTacToeFrame extends JFrame implements ActionListener {
     public String getPlayerSymbol() {
         return homepage.getSymbol();
     }
+
+    public String getAISymbol() { return homepage.getAISymbol(); }
 
     public void replaceScreen() {
         cardLayout.show(mainPanel, "game");
