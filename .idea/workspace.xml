@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9084e97-5ecc-4104-906a-36806e987ac1" name="Changes" comment="">
+    <list default="true" id="b9084e97-5ecc-4104-906a-36806e987ac1" name="Changes" comment="draft">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToeGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToeGame.java" afterDir="false" />
     </list>
@@ -78,6 +78,17 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="draft" />
