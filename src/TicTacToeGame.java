@@ -274,6 +274,60 @@ public class TicTacToeGame {
         }
     }
 
+    public void aiWin() {
+        if (t1.getTaken().equals("ai") && t2.getTaken().equals("ai") && t3.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+        if (t4.getTaken().equals("ai") && t5.getTaken().equals("ai") && t6.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+        if (t7.getTaken().equals("ai") && t8.getTaken().equals("ai") && t9.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+        if (t1.getTaken().equals("ai") && t4.getTaken().equals("ai") && t7.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+        if (t2.getTaken().equals("ai") && t5.getTaken().equals("ai") && t8.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+        if (t3.getTaken().equals("ai") && t6.getTaken().equals("ai") && t9.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+        if (t1.getTaken().equals("ai") && t5.getTaken().equals("ai") && t9.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+        if (t3.getTaken().equals("ai") && t5.getTaken().equals("ai") && t7.getTaken().equals("ai")) {
+            ai.setWin(true);
+        }
+    }
+
+    public void playerWin() {
+        if (t1.getTaken().equals("player") && t2.getTaken().equals("player") && t3.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+        if (t4.getTaken().equals("player") && t5.getTaken().equals("player") && t6.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+        if (t7.getTaken().equals("player") && t8.getTaken().equals("player") && t9.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+        if (t1.getTaken().equals("player") && t4.getTaken().equals("player") && t7.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+        if (t2.getTaken().equals("player") && t5.getTaken().equals("player") && t8.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+        if (t3.getTaken().equals("player") && t6.getTaken().equals("player") && t9.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+        if (t1.getTaken().equals("player") && t5.getTaken().equals("player") && t9.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+        if (t3.getTaken().equals("player") && t5.getTaken().equals("player") && t7.getTaken().equals("player")) {
+            player.setWin(true);
+        }
+    }
+
     private int checkWin() {
         int count = 0;
         for (int i = 1; i <= 8; i++) {
@@ -480,16 +534,18 @@ public class TicTacToeGame {
             t4.setTaken(who);
         else if (t == 5)
             t5.setTaken(who);
-        else if (t == 6) {
+        else if (t == 6)
             t6.setTaken(who);
-            System.out.println("6 is taken by " + who);
-        }
         else if (t == 7)
             t7.setTaken(who);
         else if (t == 8)
             t8.setTaken(who);
         else if (t == 9)
             t9.setTaken(who);
+
+        playerWin();
+        aiWin();
+
     }
     private int checkHorizontal(Tile t) {
         int num = t.getPlace();

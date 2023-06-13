@@ -139,7 +139,7 @@ public class TicTacToePanel extends JPanel implements ActionListener {
     }
 
     public void updateScreenAIMove() {
-        if (!controller.getPlayerWin() && ! controller.getAIWin()) {
+        if (!controller.getPlayerWin() && !controller.getAIWin()) {
             int aiMove = controller.aiMove();
             if (aiMove == 1) {
                 tile1.setDisabledIcon(aiSymbol);
